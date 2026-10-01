@@ -1,0 +1,85 @@
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: unisphere-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-unisphere_db}
+      POSTGRES_USER: ${POSTGRES_USER:-unisphere}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+
+    volumes:
+      - unisphere_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-unisphere} -d ${POSTGRES_DB:-unisphere_db}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+    networks:
+      - unisphere-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: unisphere-backend
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      APP_NAME: ${APP_NAME:-UniSphere}
+      ENVIRONMENT: production
+      DEBUG: "false"
+
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-unisphere}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-unisphere_db}
+
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      GEMINI_FALLBACK_MODELS: ${GEMINI_FALLBACK_MODELS:-gemini-3.5-flash-lite,gemini-3.6-flash}
+      GEMINI_MAX_RETRIES: ${GEMINI_MAX_RETRIES:-1}
+      GEMINI_RETRY_BASE_SECONDS: ${GEMINI_RETRY_BASE_SECONDS:-1}
+
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000}
+
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+      WEB_TIMEOUT: ${WEB_TIMEOUT:-120}
+
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+
+    networks:
+      - unisphere-network
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health', timeout=5)"
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+networks:
+  unisphere-network:
+    driver: bridge
+
+volumes:
+  unisphere_postgres_data:

@@ -1,0 +1,46 @@
+from pydantic import BaseModel, EmailStr, Field
+
+
+class StudentRegistrationRequest(BaseModel):
+    full_name: str = Field(min_length=2, max_length=200)
+    email: EmailStr
+    password: str | None = Field(default=None, min_length=8, max_length=128)
+
+    department_id: int
+    programme: str = Field(min_length=2, max_length=150)
+    current_semester: int = Field(ge=1, le=20)
+
+    university_id: str | None = Field(
+        default=None,
+        max_length=100,
+    )
+
+    enrollment_number: str | None = Field(
+        default=None,
+        max_length=100,
+    )
+
+    academic_session: str | None = Field(
+        default=None,
+        max_length=50,
+    )
+
+
+class StudentRegistrationResponse(BaseModel):
+    message: str
+
+    user_id: int
+    student_id: int
+
+    uni_id: str
+    university_id: str | None
+    enrollment_number: str | None
+
+    full_name: str
+    email: EmailStr
+    programme: str
+    current_semester: int
+    department_id: int
+    academic_session: str | None
+
+    role: str

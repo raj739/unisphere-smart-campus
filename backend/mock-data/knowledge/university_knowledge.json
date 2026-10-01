@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Minimum Attendance Requirement",
+    "category": "Attendance",
+    "content": "Students are expected to maintain at least 75 percent attendance in their courses. Students whose attendance falls below the prescribed threshold may receive academic attention and may be required to contact the concerned faculty or academic office.",
+    "source": "University Academic Regulations"
+  },
+  {
+    "title": "Attendance Shortage",
+    "category": "Attendance",
+    "content": "Students with attendance below the required threshold should review their attendance record and contact the concerned course faculty if they believe an attendance entry is incorrect. Attendance-related issues can also be submitted through the UniSphere Helpdesk.",
+    "source": "University Academic Regulations"
+  },
+  {
+    "title": "Semester Examination Process",
+    "category": "Examination",
+    "content": "Students should check the examination schedule, examination centre, reporting time and examination instructions before appearing for a semester examination. Students should carry the required university identification or admit card where applicable.",
+    "source": "Examination Office Guidelines"
+  },
+  {
+    "title": "Digital Certificate Verification",
+    "category": "Certificates",
+    "content": "Digital certificates issued through UniSphere can be verified using their certificate identification number and verification mechanism. A valid certificate should display the student's relevant certificate information and verification status.",
+    "source": "UniSphere Digital Certificate Policy"
+  },
+  {
+    "title": "Bonafide Certificate",
+    "category": "Certificates",
+    "content": "A bonafide certificate confirms that a student is enrolled with the university. Students can request or access eligible digital certificates through the certificate service in UniSphere.",
+    "source": "Student Services Guidelines"
+  },
+  {
+    "title": "Hostel Allocation",
+    "category": "Hostel",
+    "content": "Hostel allocation depends on university hostel availability and applicable institutional rules. Students should review their hostel allocation, room information, hostel fee status and complaint records through the hostel service.",
+    "source": "Hostel Administration Guidelines"
+  },
+  {
+    "title": "Hostel Complaints",
+    "category": "Hostel",
+    "content": "Students can submit hostel-related complaints such as maintenance, Wi-Fi, electrical or facility issues through the UniSphere helpdesk or hostel complaint service. Each complaint receives a trackable status.",
+    "source": "Hostel Administration Guidelines"
+  },
+  {
+    "title": "Fee Payment",
+    "category": "Fees",
+    "content": "Students can review their semester fee, paid amount, outstanding amount and due date through the UniSphere fee service. Payment records should be retained for future reference.",
+    "source": "Student Finance Guidelines"
+  },
+  {
+    "title": "Helpdesk Requests",
+    "category": "Helpdesk",
+    "content": "Students can submit requests relating to academics, hostel, transport, fees, certificates and other university services through the UniSphere Helpdesk. Each request receives a ticket number and status.",
+    "source": "UniSphere Helpdesk Guidelines"
+  },
+  {
+    "title": "Academic Support",
+    "category": "Academic Support",
+    "content": "Students experiencing academic difficulties may receive academic counselling, faculty review, attendance reminders or other appropriate interventions based on academic indicators and university processes.",
+    "source": "Academic Support Guidelines"
+  },
+  {
+    "title": "Student Privacy",
+    "category": "Privacy",
+    "content": "Student academic and administrative information should only be accessed by authorised users according to their role and applicable university policies. Students should not share authentication credentials with other people.",
+    "source": "UniSphere Privacy and Security Guidelines"
+  },
+  {
+    "title": "Attendance Policy Hindi",
+    "category": "Attendance",
+    "content": "उपस्थिति के लिए सामान्य न्यूनतम आवश्यकता 75 प्रतिशत है। यदि आपकी उपस्थिति कम है तो UniSphere में रिकॉर्ड देखें, शिक्षक से संपर्क करें और आवश्यकता होने पर Helpdesk टिकट बनाएं.",
+    "source": "University Academic Regulations"
+  },
+  {
+    "title": "Fee Payment Hindi",
+    "category": "Fees",
+    "content": "फीस, भुगतान, बकाया राशि और देय तिथि UniSphere के Fees और Payments section में देखें। भुगतान के बाद रसीद सुरक्षित रखें और किसी अंतर के लिए Helpdesk का उपयोग करें.",
+    "source": "Student Finance Guidelines"
+  },
+  {
+    "title": "Hostel and Transport Hindi",
+    "category": "Campus Services",
+    "content": "Hostel आवंटन, कमरे की जानकारी और शिकायतें Hostel service में उपलब्ध हैं। बस route, वाहन और transport issue Transport service में देखें या रिपोर्ट करें.",
+    "source": "Campus Services Guidelines"
+  },
+  {
+    "title": "Parent Portal Hindi",
+    "category": "Parent Portal",
+    "content": "Parent Portal केवल linked student की academic summary, attendance, fee status और alerts दिखाता है। किसी दूसरे छात्र की निजी जानकारी उपलब्ध नहीं होती.",
+    "source": "UniSphere Privacy and Security Guidelines"
+  },
+  {
+    "title": "AI and Privacy Hindi",
+    "category": "AI Assistant",
+    "content": "UniSphere AI university knowledge और आपके authorised account context के आधार पर सहायता करता है। पासवर्ड, OTP, token या API key कभी साझा न करें.",
+    "source": "UniSphere Privacy and Security Guidelines"
+  }
+]
